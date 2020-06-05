@@ -1,0 +1,9 @@
+---
+- name: Generiere dhcpd.conf-Files
+  template:
+    src: "dhcpd.conf.j2"
+    dest: "{{ inventory_dir }}/dynamic_vars/files/config/dhcp/dhcpd.conf"
+    mode: '0644'
+  run_once: true
+  delegate_to: localhost
+  become: no
